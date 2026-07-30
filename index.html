@@ -1,43 +1,112 @@
-<!DOCTYPE html> 
-<html lang="pt-br"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Blog</title> 
-<style> 
-header{ 
-background-color: #5AFF47; 
-color: ; ‘ #5A0092;
-text-align: center; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-main{ 
-background-color:#5A0092; 
-color: #5AFF47; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-img{ 
-width: 80px; 
-height: 80px; 
-} 
-</style> 
-</head> 
-<body> 
-<header> 
-<h1>Blog da Polly</h1> 
-<p>Vou compartilhar com vocês informações sobre livros</p>
-</header> 
- 
-<main> 
-<img src alt="A imagem mostra um ambiente aconchegante de leitura, com uma pessoa sentada em uma poltrona verde lendo um livro, cercada por estantes cheias de livros. Ao fundo, há uma janela iluminada e uma mesa com uma caneca e uma vela, transmitindo uma atmosfera calma e acolhedora. No topo, aparece o título “O Cantinho do Leitor” com o subtítulo “Dicas, resenhas e o amor pela literatura.”
-> <h2>Bem vindo ao meu Blog de livros</h2> 
-<p>Por: Polly Carrão</p> 
-<p> Oii, sejam bem vindos ao meu blog!!</p> 
-<p>Oii, galera! Sejam bem-vindos ao meu blog!  Pode me chamar de Polly,e criei esse blog para falar sobre livros — esse blog vai falar sobre novos lançamentos, resenhas, dicas, etc...✨</p> </main> 
-</body> 
-</html>
- 
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog da Polly</title>
+    <style>
+        header {
+            /* Cores do blog da Polly */
+            background-color: #5AFF47;
+            color: #5A0092;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        main {
+            /* Cores do blog da Polly */
+            background-color: #5A0092;
+            color: #5AFF47;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        article {
+            display: flex;
+            margin-bottom: 20px; /* Adicionado para separar os posts */
+            border-bottom: 1px solid #5AFF47; /* Linha sutil para separar */
+            padding-bottom: 20px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px; /* Espaço entre a imagem e o texto */
+            object-fit: cover; /* Garante que a imagem não distorça */
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+        
+        div > h2 {
+            margin-top: 0; /* Alinha o título com o topo da imagem */
+        }
+
+        button {
+            background-color: #5AFF47;
+            color: #5A0092;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Blog da Polly</h1>
+        <p>Vou compartilhar com vocês informações sobre livros</p>
+    </header>
+    <main>
+        <article>
+            <img src="imagem-blog.png"
+                alt="Ambiente aconchegante de leitura com poltrona verde e estantes de livros.">
+            <div>
+                <h2>Bem vindo ao meu Blog de livros</h2>
+                <p class="artigo-autor">Por: Polly Carrão</p>
+                <p>Oii, sejam bem vindos ao meu blog!!</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+        <article>
+            <img src="imagem-blog.png"
+                alt="Ambiente aconchegante de leitura com poltrona verde e estantes de livros.">
+            <div>
+                <h2>Novos Lançamentos e Dicas</h2>
+                <p class="artigo-autor">Por: Polly Carrão</p>
+                <p>Oii, galera! Sejam bem-vindos ao meu blog! Pode me chamar de Polly,e criei esse blog para falar sobre livros — esse blog vai falar sobre novos lançamentos, resenhas, dicas, etc...✨</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
+</body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else{
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    })
+</script>
+
+</html>
